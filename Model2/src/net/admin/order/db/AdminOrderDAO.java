@@ -107,6 +107,15 @@ public class AdminOrderDAO {
 					orderbean.setO_sum_money(rs.getInt("o_sum_money"));
 					orderbean.setO_status(rs.getInt("o_status"));
 					orderbean.setO_trade_type(rs.getString("o_trade_type"));
+					orderbean.setO_receive_name(rs.getString("o_receive_name"));
+					orderbean.setO_receive_phone(rs.getString("o_receive_phone"));
+					orderbean.setO_receive_mobile(rs.getString("o_receive_mobile"));
+					orderbean.setO_receive_addr1(rs.getString("o_receive_addr1"));
+					orderbean.setO_receive_addr2(rs.getString("o_receive_addr2"));
+					orderbean.setO_memo(rs.getString("o_memo"));
+					orderbean.setO_trade_type(rs.getString("o_trade_type"));
+					orderbean.setO_trade_payer(rs.getString("o_trade_payer"));
+					
 					adminOrderDetail.add(orderbean);
 				}
 			} catch (Exception e) {
