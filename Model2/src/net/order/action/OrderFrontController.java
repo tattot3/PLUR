@@ -42,18 +42,29 @@ public class OrderFrontController extends HttpServlet{
 
 			// 주문완료시 => 사용자 장바구니 정보 삭제
 			// BasketDAO deleteBasket(String id)
+			action=new OrderAdd();
+			try{
+				forward=action.execute(request, response);
+			}catch(Exception e){e.printStackTrace();}
 
 
-		} else if (command.equals("/OrderLsit.or")) {
+		} else if (command.equals("/OrderList.or")) {
 			// 이동 ./OrderList.or => OrderList 자바파일
 			// //getOrderList(id) 호출
 			// => ./goods_order/order_list.jsp
+			action=new OrderList();
+			try{
+				forward=action.execute(request, response);
+			}catch(Exception e){e.printStackTrace();}
 
 		} else if (command.equals("/OrderDetail.or")) {
 			// /OrderDetail.or => OrderDetail자바파일
 			// //orderDetail(trade_num)호출
 			// => ./goods_order/order_detail.jsp
-
+			action=new OrderDetail();
+			try{
+				forward=action.execute(request, response);
+			}catch(Exception e){e.printStackTrace();}
 		}
 		// 이동
 		if(forward!=null){

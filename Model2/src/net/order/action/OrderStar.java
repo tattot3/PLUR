@@ -20,7 +20,6 @@ public class OrderStar implements Action{
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
-		System.out.println(id);
 		//  //getBasketList(id) 호출
 				//장바구니의 정보를 가져온다.
 		// getGoodsList(item) 호출
@@ -28,7 +27,7 @@ public class OrderStar implements Action{
 		BasketDAO bdao = new BasketDAO();
 		Vector vector = bdao.getBasketList(id);
 		List basketList = (List) vector.get(0);
-		List goodsList = (List) vector.get(0);
+		List goodsList = (List) vector.get(1);
 		//  //getMember(id) 호출 
 		//회원 정보를 가져온다
 		MemberDAO mdao = new MemberDAO();
