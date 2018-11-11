@@ -5,34 +5,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="css/bootstrap-grid.css" rel="stylesheet">
+<!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
+<%String id=(String)session.getAttribute("id"); %>
+
+<div class="bg-primary" style="height:100vh;">
+	<nav class="nav bg-warning" style="height:50px;">
+		<ul class="nav">
+			<%if(id==null){
+				%>
+				<li class="text-light ml-3 mr-3">login</li>
+				<li class="text-light ml-3 mr-3">join</li>
+			<%}else{%>
+				<li>
+					<a href="img/member/profile_image.JPG"><img src=""></a>
+				</li>
+				<li class="text-light ml-3 mr-3"><%=id%></li>
+			<%}%>
+			
+		</ul>
+	</nav>
+
+</div>
 <h1>WebContent/jspdb2/main.jsp</h1>
-<%
-String id=(String)session.getAttribute("id"); 
 
-if(id == null){
-%><script type="text/javascript">
-alert("로그인해주세요.")
-location.href="./MemberLogin.me"
-</script><%}
-//세션값이 없으면 loginForm.jsp로 이동
-%>
+    
 
-<%=id %>님이 로그인 하셨습니다.
-<input type="button" value="로그아웃"
- onclick="location.href='./MemberLogout.me'"><br>
-<a href="./MemberInfo.me">회원정보보기</a><br> <!-- //나의 정보보기 select -->
-<a href="./MemberUpdate.me">회원정보수정</a><br> <!-- //나의 정보수정 update -->
-<a href="./MemberDelete.me">회원정보삭제</a><br> <!-- //나의 정보삭제 delete -->
 
-<%
-if(id!=null){
-	//세션있으면 //관리자 admin이면 회원목록이 보이게 설정
-	if(id.equals("admin")){
-		%><a href="./MemberList.me">회원목록</a><%
-	}
-}
-%>
+
 </body>
 </html>
