@@ -3,7 +3,7 @@
 				auth="Container"
 				type="javax.sql.DataSource"
 				driverClassName="com.mysql.jdbc.Driver"
-				url="jdbc:mysql://localhost:3306/dogshop"
+				url="jdbc:mysql://localhost:3306/plur"
 				username="jspid"
 				password="jsppass"/>
 </Context>
