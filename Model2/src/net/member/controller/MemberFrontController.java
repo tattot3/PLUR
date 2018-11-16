@@ -30,6 +30,7 @@ public class MemberFrontController extends HttpServlet {
 			System.out.println("MemberFrontController doProcess()메서드");
 		// 가상주소 뽑아오기 
 		// URI 주소 뽑아오기
+			
 		String requestURI = request.getRequestURI();
 			System.out.println(requestURI);
 		//프로젝트 ContextPath경로
@@ -70,13 +71,13 @@ public class MemberFrontController extends HttpServlet {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./member/loginForm.jsp");
+			
 		} else if(command.equals("/MemberLoginAction.me")){
 			action = new MemberLoginAction();
 			try{
 				forward = action.execute(request, response);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
+			}catch(Exception e){e.printStackTrace();}
+			
 		} else if(command.equals("/Main.me")){
 			forward = new ActionForward();
 			forward.setRedirect(false);
