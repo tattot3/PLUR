@@ -16,7 +16,7 @@
 <%
 //버전이 낮을때 intValue()넣어줘야 인식가능
 int count = ((Integer)request.getAttribute("count")).intValue();
-List<BoardBean> boardList = (List)request.getAttribute("boardList");;
+List<BoardBean> boardList = (List)request.getAttribute("boardList");
 int pageCount = (Integer)request.getAttribute("pageCount");
 int pageBlock = (Integer)request.getAttribute("pageBlock");
 int startPage = (Integer)request.getAttribute("startPage");
